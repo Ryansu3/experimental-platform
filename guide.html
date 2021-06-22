@@ -1,0 +1,229 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>主页</title>
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/common.js"></script>
+</head>
+<body>
+<style>body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #FFF;
+}
+
+.body {
+    width: 1440;
+    background-color: #FFF;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    min-height: 600px;
+    left: 50%;
+    margin-left: -720px;
+}
+
+.window_iframe {
+    background-color: rgba(255, 255, 255, 0.75);;
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: none;
+    z-index: 999;
+}
+
+.window_iframe iframe {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: none;
+    box-shadow: -1px 0px 23px 1px #C7C3C3;
+    z-index: 999;
+}
+</style>
+    <script type="text/javascript">
+        var winiFrame = {};
+        winiFrame.open = function(id, width, height, action) {
+            // 显示
+            var ph = 0;
+            var top = "20px";
+            var body = $("body").height() == 0 ? $("html") : $("body");
+            if (parseInt(height) > body.height() - 20) {
+                body.css({
+                    "min-height" : parseInt(height) + 100 + "px"
+                });
+                body.css({
+                    "height" : parseInt(height) + 100 + "px"
+                });
+            } else {
+                body.css({
+                    "min-height" : "auto"
+                });
+                body.css({
+                    "height" : "auto"
+                });
+            }
+            $("#" + id).height(body.height());
+            $("#" + id).show();
+            $("#" + id + " iframe").css({
+                'width' : width,
+                'height' : height,
+                'top' : top,
+                'marginLeft' : -(parseInt(width, 10) / 2) + "px",
+                'marginTop' : ph + "px"
+            })
+            $("#" + id + " iframe").attr("src", action);
+
+        };
+        winiFrame.close = function(id) {
+            $("#" + id).hide();
+            $("#" + id + " iframe").attr("src", "");
+            $("body").css({
+                "min-height" : "0px"
+            });
+            $("body").css({
+                "height" : "0px"
+            });
+
+        }
+
+        winiFrame.reload = function(id) {
+            window.location.reload();
+        }
+    </script>
+
+<div class="body">
+    <table border="0" cellspacing="0" id="15119383540041774"
+           style="width: 100%; height: 89px; table-layout: fixed; background-color: rgb(255, 255, 255); margin: 0px; position: relative;">
+        <tr>
+            <td width="50%" height="3px" valign="top" islayout="15119383540041774" index="0" ptid="true" colspan="1"
+                rowspan="1" style="overflow: hidden; padding: 0px;"><img src="image/Logo.png" width="700" height="100" />
+            </td>
+        </tr>
+    </table>
+    <table border="0" cellspacing="0" id="15119383563325620"
+           style="width: 100%; height: 49px; table-layout: fixed; background-color: rgb(11, 85, 178); margin: 0px; position: relative;">
+        <tr>
+            <td width="100%" height="10px" valign="top" islayout="15119383563325620" index="0" ptid="true" colspan="1"
+                rowspan="1" style="overflow: hidden; padding: 0px;">
+                <ul id="15119384312915460" draggable="false"
+                    style="position: relative; width: 600px; height: 49px; background-color: rgb(11, 85, 178); overflow: hidden; font-family: 微软雅黑; color: rgb(255, 255, 255); margin: 0px 0px 0px 220px; list-style: none; padding: 0px; font-size: 14px; line-height: 49px; border: none; cursor: pointer;">
+                    <li onClick="javascript:window.location.href = 'index.html'"
+                        style="float: left; height: 100%; padding: 0px 30px; line-height: 49px; background-color: rgb(6, 64, 136); color: rgb(255, 255, 255);">                        首页
+                    </li>
+                    <li style="float: left; height: 13px; width: 1px; position: relative; background-color: rgb(255, 255, 255); top: 50%; margin-top: -7px;"></li> 
+                    <li onClick="javascript:window.location.href = 'brief.html'"
+                        style="float: left; height: 100%; padding: 0px 30px; line-height: 49px;">实验简介
+                    </li>
+                    <li style="float: left; height: 13px; width: 1px; position: relative; background-color: rgb(255, 255, 255); top: 50%; margin-top: -7px;"></li>
+                    <li onClick="javascript:window.location.href = 'guide.html'"
+                        style="float: left; height: 100%; padding: 0px 30px; line-height: 49px;">实验指导
+                    </li>
+                    <li style="float: left; height: 13px; width: 1px; position: relative; background-color: rgb(255, 255, 255); top: 50%; margin-top: -7px;"></li>
+                    <li onClick="javascript:window.location.href = 'question.html'"
+                        style="float: left; height: 100%; padding: 0px 30px; line-height: 49px;">答疑讨论
+                    </li>
+                    <li style="float: left; height: 13px; width: 1px; position: relative; background-color: rgb(255, 255, 255); top: 50%; margin-top: -7px;"></li>
+                    <li onClick="javascript:window.location.href = 'submit.html'"
+                        style="float: left; height: 100%; padding: 0px 30px; line-height: 49px;">报告提交
+                    </li>
+                    <li style="float: left; height: 13px; width: 1px; position: relative; background-color: rgb(255, 255, 255); top: 50%; margin-top: -7px;"></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+   <p>
+    为了更好地完成实验教学任务和提高实验教学质量,加强实验教学的管理工作,现对实验指导教师提出如下规定：
+
+1.认真备课和撰写实验教案，提前通知实验室管理人员做好相关准备工作，在指导实验前必须首先进行预备实验；通过预备实验了解和熟悉实验所需仪器、试剂、实验原理、步骤、实验结果的数据与图表、检查仪器的状况，熟悉仪器性能和使用方法，以及一般的维修方法，以保证实验正常进行。对新上课的教师如果不按规定做预备实验，按学校的规定管理人员有权拒绝其进入实验室指导实验，所引起的后果有其本人负责。
+
+2.应在上课前5分钟到岗，实验教学时间内不应离开实验指导岗位。
+
+3.严格要求、认真指导和讲解实验原理、内容、仪器操作方法及注意事项。准确回答学生提出的问题、及时进行有针对性个别指导，纠正不正确的操作习惯，督促学生合理安排实验进度和及时处理实验故障。
+
+4.认真检查学生实验记录情况，签字后方可让学生离开实验室。
+
+5.在指导实验知识与技能的同时，注意帮助学生树立认真严谨、实事求是、爱护仪器设备、节约试剂等良好实验作风，对弄虚作假、马虎、浪费现象应给与批评教育；对于责任原因引起仪器设备损坏者，要责令检讨并按规定赔偿。
+
+6.负责实验过程中的实验室安全、卫生工作，检查实验结束工作与值日情况。
+
+7.及时认真地批阅学生实验报告并发还学生，批阅时给出必要、正确的评语，纠正实验与实验报告中的错误，积极与学生讨论突出的、具有代表性的问题，对于不合格的实验报告，应督促学生重写，根据学生实验情况综合评定实验成绩。
+
+8.承担各种常见教学实验仪器设备的验收、调试、鉴定等技术工作，协助实验室技术人员管理与使用仪器，保证仪器设备处于正常工作状态。
+
+9.每学期教学结束后，应对实验教学工作进行总结、分析并提交书面总结材料，交实验中心归入实验室教学工作档案。
+   </p>
+   <!-- <table border="0" cellspacing="0" id="15119386896442768"
+           style="width: 100%; height: 270px; table-layout: fixed; background-color: rgb(237, 237, 237); margin: 0px; position: relative;">
+        <tr>
+            <td width="100%" height="10px" valign="top" islayout="15119386896442768" index="0" ptid="true" colspan="1"
+                rowspan="1" style="overflow: hidden; padding: 0px;"></td>
+        </tr>
+    </table>
+    <table border="0" cellspacing="0" id="15119387414611263"
+           style="width: 100%; height: 243px; table-layout: fixed; background-color: rgb(255, 255, 255); margin: 0px; position: relative;">
+        <tr>
+            <td width="100%" height="10px" valign="top" islayout="15119387414611263" index="0" ptid="true" colspan="1"
+                rowspan="1" style="overflow: hidden; padding: 0px;"><img id="15119403282781834"
+                                                                         src="portalImg\2017-11-29_15-30-22-893.jpg"
+                                                                         onClick="javascript:window.location.href = 'normal14.html'"
+                                                                         draggable="false"
+                                                                         style="position: relative; display: block; width: auto; height: auto; margin: 40px 0px 0px 220px; border: none;">
+            </td>
+        </tr>
+    </table> -->
+
+
+
+
+    
+
+
+       
+
+    
+    <table border="0" cellspacing="0" id="15119387600855628"
+           style="width: 100%; height: 42px; table-layout: fixed; background-color: rgb(11, 85, 178); margin: 0px; position: relative;">
+        <tr>
+            <td width="100%" height="10px" valign="top" islayout="15119387600855628" index="0" ptid="true" colspan="1"
+                rowspan="1" style="overflow: hidden; padding: 0px;">
+                <div id="15119387855576492"
+                     style="position: relative; width: 100%; height: 20px; background-color: rgb(11, 85, 178); overflow: hidden; font-size: 12px; font-family: 微软雅黑; color: rgb(229, 246, 255); text-align: center; margin: 12px 0px 0px;">
+                    版权所有：杭州电子科技大学
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!--<table border="0" cellspacing="0" id="15119406723502249"
+           style="width: 1010px; height: auto; table-layout: fixed; background-color: transparent; margin: 0px; position: absolute; left: 223px; top: 592px;">
+        <tr>
+            <td width="33.333%" height="100px" valign="top" islayout="15119406723502249" index="0" ptid="true"
+                colspan="1" rowspan="1" style="overflow: hidden; padding: 0px;"><img id="15119408409349681"
+                                                                                     src="portalImg\2017-11-29_15-37-18-284.png"
+                                                                                     onClick="javascript:window.location.href = 'normal16.html'"
+                                                                                     draggable="false"
+                                                                                     style="position: relative; display: block; width: auto; height: auto; margin: 0px; border: none;">
+            </td>
+            <td width="33.333%" height="100px" valign="top" islayout="15119406723502249" index="1" ptid="true"
+                colspan="1" rowspan="1" style="overflow: hidden; padding: 0px;"><img id="15119408552871351"
+                                                                                     src="portalImg\2017-11-29_15-37-27-880.png"
+                                                                                     onClick="javascript:window.location.href = 'normal15.html'"
+                                                                                     draggable="false"
+                                                                                     style="position: relative; display: block; width: auto; height: auto; margin: 0px; border: none;">
+            </td>
+            <td width="33.333%" height="100px" valign="top" islayout="15119406723502249" index="2" ptid="true"
+                colspan="1" rowspan="1" style="overflow: hidden; padding: 0px;"><img id="15119408683184428"
+                                                                                     src="portalImg\2017-11-29_15-37-35-826.png"
+                                                                                     onClick="winiFrame.open('window_iframe','420px','250px','pup.html')"
+                                                                                     draggable="false"
+                                                                                     style="position: relative; display: block; width: auto; height: auto; margin: 0px; border: none;">
+            </td>
+        </tr>
+    </table>-->
+</div>
+</body>
+</html>

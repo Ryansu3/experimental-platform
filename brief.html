@@ -1,0 +1,211 @@
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>主页</title>
+    <script type="text/javascript" src="scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/common.js"></script>
+</head>
+<body>
+<style>body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #FFF;
+}
+
+.body {
+    width: 1440;
+    background-color: #FFF;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    min-height: 600px;
+    left: 50%;
+    margin-left: -720px;
+}
+
+.window_iframe {
+    background-color: rgba(255, 255, 255, 0.75);;
+    position: absolute;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: none;
+    z-index: 999;
+}
+
+.window_iframe iframe {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: none;
+    box-shadow: -1px 0px 23px 1px #C7C3C3;
+    z-index: 999;
+}
+</style>
+    <script type="text/javascript">
+        var winiFrame = {};
+        winiFrame.open = function(id, width, height, action) {
+            // 显示
+            var ph = 0;
+            var top = "20px";
+            var body = $("body").height() == 0 ? $("html") : $("body");
+            if (parseInt(height) > body.height() - 20) {
+                body.css({
+                    "min-height" : parseInt(height) + 100 + "px"
+                });
+                body.css({
+                    "height" : parseInt(height) + 100 + "px"
+                });
+            } else {
+                body.css({
+                    "min-height" : "auto"
+                });
+                body.css({
+                    "height" : "auto"
+                });
+            }
+            $("#" + id).height(body.height());
+            $("#" + id).show();
+            $("#" + id + " iframe").css({
+                'width' : width,
+                'height' : height,
+                'top' : top,
+                'marginLeft' : -(parseInt(width, 10) / 2) + "px",
+                'marginTop' : ph + "px"
+            })
+            $("#" + id + " iframe").attr("src", action);
+
+        };
+        winiFrame.close = function(id) {
+            $("#" + id).hide();
+            $("#" + id + " iframe").attr("src", "");
+            $("body").css({
+                "min-height" : "0px"
+            });
+            $("body").css({
+                "height" : "0px"
+            });
+
+        }
+
+        winiFrame.reload = function(id) {
+            window.location.reload();
+        }
+    </script>
+
+<div class="body">
+    <table border="0" cellspacing="0" id="15119383540041774"
+           style="width: 100%; height: 89px; table-layout: fixed; background-color: rgb(255, 255, 255); margin: 0px; position: relative;">
+        <tr>
+            <td width="50%" height="3px" valign="top" islayout="15119383540041774" index="0" ptid="true" colspan="1"
+                rowspan="1" style="overflow: hidden; padding: 0px;"><img src="image/Logo.png" width="700" height="100" />
+            </td>
+        </tr>
+    </table>
+    <table border="0" cellspacing="0" id="15119383563325620"
+           style="width: 100%; height: 49px; table-layout: fixed; background-color: rgb(11, 85, 178); margin: 0px; position: relative;">
+        <tr>
+            <td width="100%" height="10px" valign="top" islayout="15119383563325620" index="0" ptid="true" colspan="1"
+                rowspan="1" style="overflow: hidden; padding: 0px;">
+                <ul id="15119384312915460" draggable="false"
+                    style="position: relative; width: 600px; height: 49px; background-color: rgb(11, 85, 178); overflow: hidden; font-family: 微软雅黑; color: rgb(255, 255, 255); margin: 0px 0px 0px 220px; list-style: none; padding: 0px; font-size: 14px; line-height: 49px; border: none; cursor: pointer;">
+                    <li onClick="javascript:window.location.href = 'index.html'"
+                        style="float: left; height: 100%; padding: 0px 30px; line-height: 49px; background-color: rgb(6, 64, 136); color: rgb(255, 255, 255);">                        首页
+                    </li>
+                    <li style="float: left; height: 13px; width: 1px; position: relative; background-color: rgb(255, 255, 255); top: 50%; margin-top: -7px;"></li> 
+                    <li onClick="javascript:window.location.href = 'brief.html'"
+                        style="float: left; height: 100%; padding: 0px 30px; line-height: 49px;">实验简介
+                    </li>
+                    <li style="float: left; height: 13px; width: 1px; position: relative; background-color: rgb(255, 255, 255); top: 50%; margin-top: -7px;"></li>
+                    <li onClick="javascript:window.location.href = 'guide.html'"
+                        style="float: left; height: 100%; padding: 0px 30px; line-height: 49px;">实验指导
+                    </li>
+                    <li style="float: left; height: 13px; width: 1px; position: relative; background-color: rgb(255, 255, 255); top: 50%; margin-top: -7px;"></li>
+                    <li onClick="javascript:window.location.href = 'question.html'"
+                        style="float: left; height: 100%; padding: 0px 30px; line-height: 49px;">答疑讨论
+                    </li>
+                    <li style="float: left; height: 13px; width: 1px; position: relative; background-color: rgb(255, 255, 255); top: 50%; margin-top: -7px;"></li>
+                    <li onClick="javascript:window.location.href = 'submit.html'"
+                        style="float: left; height: 100%; padding: 0px 30px; line-height: 49px;">报告提交
+                    </li>
+                    <li style="float: left; height: 13px; width: 1px; position: relative; background-color: rgb(255, 255, 255); top: 50%; margin-top: -7px;"></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+   <p>
+    由于电磁场与电磁波课程在电磁波传播部分授课中的理论和概念抽象,难以理解.利用MATLAB语言编程技术,针对电磁场和电磁波传播2个方面,设计2个模拟仿真实验:均匀平面波在无界空间中的传播和设定各参数实验数据获得分界面上波形的变化.2个具体仿真实验形象地再现了均匀平面电磁波在自由空间传播状态和在2个媒介边界上的变化特征,通过实验有助于学生对电磁场和电磁波基本规律的掌握.
+   </p>
+   <!-- <table border="0" cellspacing="0" id="15119386896442768"
+           style="width: 100%; height: 270px; table-layout: fixed; background-color: rgb(237, 237, 237); margin: 0px; position: relative;">
+        <tr>
+            <td width="100%" height="10px" valign="top" islayout="15119386896442768" index="0" ptid="true" colspan="1"
+                rowspan="1" style="overflow: hidden; padding: 0px;"></td>
+        </tr>
+    </table>
+    <table border="0" cellspacing="0" id="15119387414611263"
+           style="width: 100%; height: 243px; table-layout: fixed; background-color: rgb(255, 255, 255); margin: 0px; position: relative;">
+        <tr>
+            <td width="100%" height="10px" valign="top" islayout="15119387414611263" index="0" ptid="true" colspan="1"
+                rowspan="1" style="overflow: hidden; padding: 0px;"><img id="15119403282781834"
+                                                                         src="portalImg\2017-11-29_15-30-22-893.jpg"
+                                                                         onClick="javascript:window.location.href = 'normal14.html'"
+                                                                         draggable="false"
+                                                                         style="position: relative; display: block; width: auto; height: auto; margin: 40px 0px 0px 220px; border: none;">
+            </td>
+        </tr>
+    </table> -->
+
+
+
+
+    
+
+
+       
+
+    
+     <table border="0" cellspacing="0" id="15119387600855628"
+           style="width: 100%; height: 42px; table-layout: fixed; background-color: rgb(11, 85, 178); margin: 0px; position: relative;">
+        <tr>
+            <td width="100%" height="10px" valign="top" islayout="15119387600855628" index="0" ptid="true" colspan="1"
+                rowspan="1" style="overflow: hidden; padding: 0px;">
+                <div id="15119387855576492"
+                     style="position: relative; width: 100%; height: 20px; background-color: rgb(11, 85, 178); overflow: hidden; font-size: 12px; font-family: 微软雅黑; color: rgb(229, 246, 255); text-align: center; margin: 12px 0px 0px;">
+                    版权所有：杭州电子科技大学
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!--<table border="0" cellspacing="0" id="15119406723502249"
+           style="width: 1010px; height: auto; table-layout: fixed; background-color: transparent; margin: 0px; position: absolute; left: 223px; top: 592px;">
+        <tr>
+            <td width="33.333%" height="100px" valign="top" islayout="15119406723502249" index="0" ptid="true"
+                colspan="1" rowspan="1" style="overflow: hidden; padding: 0px;"><img id="15119408409349681"
+                                                                                     src="portalImg\2017-11-29_15-37-18-284.png"
+                                                                                     onClick="javascript:window.location.href = 'normal16.html'"
+                                                                                     draggable="false"
+                                                                                     style="position: relative; display: block; width: auto; height: auto; margin: 0px; border: none;">
+            </td>
+            <td width="33.333%" height="100px" valign="top" islayout="15119406723502249" index="1" ptid="true"
+                colspan="1" rowspan="1" style="overflow: hidden; padding: 0px;"><img id="15119408552871351"
+                                                                                     src="portalImg\2017-11-29_15-37-27-880.png"
+                                                                                     onClick="javascript:window.location.href = 'normal15.html'"
+                                                                                     draggable="false"
+                                                                                     style="position: relative; display: block; width: auto; height: auto; margin: 0px; border: none;">
+            </td>
+            <td width="33.333%" height="100px" valign="top" islayout="15119406723502249" index="2" ptid="true"
+                colspan="1" rowspan="1" style="overflow: hidden; padding: 0px;"><img id="15119408683184428"
+                                                                                     src="portalImg\2017-11-29_15-37-35-826.png"
+                                                                                     onClick="winiFrame.open('window_iframe','420px','250px','pup.html')"
+                                                                                     draggable="false"
+                                                                                     style="position: relative; display: block; width: auto; height: auto; margin: 0px; border: none;">
+            </td>
+        </tr>
+    </table>-->
+</div>
+</body>
+</html>
