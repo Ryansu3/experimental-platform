@@ -1,0 +1,7 @@
+﻿2020-09-21 09:22:46.231) >> System.ArgumentException: 指定的 Visual 已经是另一个 Visual 的子级或者已经是 CompositionTarget 的根。
+   在 System.Windows.Media.VisualCollection.Insert(Int32 index, Visual visual)
+   在 System.Windows.Controls.UIElementCollection.InsertInternal(Int32 index, UIElement element)
+   在 JiJiDownForWPF.UserControls.u_Download.Msx0DMm44EgOIXJOVL.Ss1UbJRCrPn10nSMdp6(Object , Int32 , Object )
+   在 JiJiDownForWPF.UserControls.u_Download.Msx0DMm44EgOIXJOVL.itNHO2uns2()
+   在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)
+   在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)
